@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from "./Header.module.css";
+import {Link} from "react-router-dom";
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
+import { DataContext } from '../DataProvider/DataProvider';
 
 function Header() {
+    const[{basket},dispatch] = useContext(DataContext)
+    console.log(basket.length);
+    const totalItem = basket?.reduce((amount,item)=>{
+        return item.amount +  amount 
+    },0)
   return (
-   <>
+   <section className={classes.fixed}>
     <section>
         <div className={classes.header_container}>
             {/* logo */}
             <div className={classes.logo_container}>
-            <a href="/">
+            <Link to="/">
                 <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon logo" />
-            </a>
+            </Link>
             <div className={classes.delivery}>
             <span>
                 <SlLocationPin />
@@ -35,29 +42,29 @@ function Header() {
         </div>
         {/* {other section} */}
         <div className={classes.order_container}>
-            <a href="/" className={classes.language}>
+            <Link to="/" className={classes.language}>
             <img src="https://pngimg.com/uploads/flags/flags_PNG14592.png" alt="" />
                 <select name="" id="">
                     <option value="">EN</option>
                 </select>
-                </a>
-              <a href="/">
+                </Link>
+              <Link to="/">
                     <p>Sign In</p>
                     <span>Account & Lists</span>
-            </a>
-            <a href="/">
+            </Link>
+            <Link to="/orders">
                 <p>returns</p>
                 <span>& Orders</span>
-            </a>
-            <a href='/' className={classes.cart}>
+            </Link>
+            <Link to='/cart' className={classes.cart}>
                 <BiCart size={35}/>
-                <span>0</span>
-            </a>
+                <span>{totalItem}</span>
+            </Link>
         </div>
         </div>
-    </section>
+        </section>
     <LowerHeader/>
-   </>
+   </section>
   );
 };
 
