@@ -14,7 +14,7 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
 
     const addToCart = ()=>{
         dispatch({
-            type:Type.ADD_TO_CART,
+            type:Type.ADD_TO_BASKET,
             item:{
               image, title, id, rating, price, description
 
