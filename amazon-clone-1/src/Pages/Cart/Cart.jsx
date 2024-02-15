@@ -10,7 +10,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import ProductCard from "../../Components/Product/ProductCard";
 
 function Cart() {
-  const [{ basket, user }, dispatch] = useContext(DataContext);
+  const [{ basket}, dispatch] = useContext(DataContext);
   const total = basket.reduce((amount, item) => {
     return item.price * item.amount + amount;
   }, 0);
@@ -34,7 +34,7 @@ function Cart() {
           <h2>Hello</h2>
           <h3>Your shopping basket</h3>
           <hr />
-          {basket?.length == 0 ? (
+          {basket?.length === 0 ? (
             <p>Opps ! Your cart is empty!</p>
           ) : (
             basket?.map((item, i) => {
