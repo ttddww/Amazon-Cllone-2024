@@ -16,7 +16,7 @@ function Auth() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState({
     signIn: false,
-    signUP: false,
+    signUp: false,
   });
 
   const [{ user }, dispatch] = useContext(DataContext);
@@ -47,19 +47,19 @@ function Auth() {
           setLoading({ ...loading, signIn: false });
         });
     } else {
-      setLoading({ ...loading, signUP: true });
+      setLoading({ ...loading, signUp: true });
       createUserWithEmailAndPassword(auth, email, password)
         .then((userInfo) => {
           dispatch({
             type: Type.SET_USER,
             user: userInfo.user,
           });
-          setLoading({ ...loading, signUP: false });
+          setLoading({ ...loading, signUp: false });
           navigate(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           setError(err.message);
-          setLoading({ ...loading, signUP: false });
+          setLoading({ ...loading, signUp: false });
         });
     }
   };
@@ -134,11 +134,11 @@ function Auth() {
         {/* create account btn */}
         <button
           type="submit"
-          name="sigUp"
+          name="signUp"
           onClick={authHandler}
           className={classes.login__registerButton}
         >
-          {loading.signUP ? (
+          {loading.signUp ? (
             <ClipLoader color="#000" size={15}></ClipLoader>
           ) : (
             "Create your Amazon Account"

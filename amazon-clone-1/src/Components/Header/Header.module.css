@@ -20,11 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 250px;
+    max-width: 300px;
 }
 
 .logo_container img {
-    width: 80%;
+    width: 70%;
     padding-top: 5px;
     margin-left: 20px;
     vertical-align: middle;
@@ -50,7 +50,7 @@
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    flex: 1;
+    flex: 0.98;
 }
 
 .search select,
@@ -66,7 +66,7 @@
 
 .search input {
     border: 1px solid white;
-    width: 100%;
+    width: 90%;
     margin-right: -2px;
     /* border: none; */
 }
@@ -89,8 +89,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 450px;
-    gap: 10px;
+    max-width: 550px;
+    gap: 25px;
 }
 
 .order_container a {
