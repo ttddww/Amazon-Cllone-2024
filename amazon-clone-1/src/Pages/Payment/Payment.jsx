@@ -65,7 +65,7 @@ function Payment() {
       // empty the basket
       dispatch({ type: Type.EMPTY_BASKET });
       setProcessing(false);
-      navigate("/orders", { state: { msg: "you have placed new order" } });
+      navigate("/Orders", { state: { msg: "you have placed new order" } });
     } catch (error) {
       console.log(error);
       setProcessing(false);

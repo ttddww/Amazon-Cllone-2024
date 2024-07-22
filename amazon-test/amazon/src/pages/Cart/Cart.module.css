@@ -1,0 +1,78 @@
+.cart_container{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 20px;
+}
+.cart_container img{
+    width: 150px !important;
+}
+.cart_product{
+    display: flex;
+    gap: 20px;
+}
+.btn_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+}
+.btn{
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    padding: 5px 16px;
+}
+.btn:hover svg{
+    fill: var(--primary-color)
+}
+.cart_container div:not(.subtotal){
+    height: auto !important;
+}
+.cart_in_container{
+    padding: 10px;
+}
+.cart_in_container h2, .cart_in_container h3{
+   padding: 10px;
+}
+.cart_in_container hr{
+    margin: 10px;
+}
+.subtotal {
+    padding: 20px;
+    min-width: 300px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgb(193, 193, 193);
+    background-color: rgb(242, 241, 241);
+    border-radius: 5px;
+}
+.subtotal a{
+    text-decoration: none;
+    color: black;
+    background-color: var(--primary-color);
+    padding: 5px 5px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+.subtotal a:hover{
+    background: var(--primary-shade) ;
+}
+.subtotal > div,
+.subtotal span{
+    display: flex;
+    gap: 20px;
+}
+@media screen and(max-width: 968px) {
+    .cart_container{
+        flex-direction: column;
+        order: 1;
+    }
+};

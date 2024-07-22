@@ -11,7 +11,7 @@ function Orders() {
     if (user) {
       db.collection("users")
         .doc(user.uid)
-        .collection("orders")
+        .collection("Orders")
         .orderBy("created", "desc")
         .onSnapshot((snapshot) => {
           console.log(snapshot);
